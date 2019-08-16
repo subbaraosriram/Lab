@@ -1,0 +1,65 @@
+  functionnal Interface
+  interface Calc{
+  public int add(int a,int b);
+  }
+  Calc c1 = new Calc(){
+       public int add(int a,int b)
+	    retrun a+b;
+  }
+  ---------------------
+  Calc c1 = (a,b) -> (a+b);
+  Sys(c1.add(10,20));
+  ---------------------
+  interface a{
+  public void getvalue();
+  default public void getName()
+  {
+    default and static key words are used to provide concrete methods in interface form java 8;
+  }
+  }
+  ---------------------------------------
+  interface a{
+   public void getvalue();
+  default public void getX()
+  {
+      
+  }
+  }
+  interface b{
+   public void getvalue();
+  default public void getX()
+  {
+    if we implemente 2 interface to one class whitch contains same concrete method then must to use in class;    
+  }
+  }
+  class Demo implemente A,B
+  {
+   @override
+   public void getX()
+   {
+   A.getX;
+   B.getX;
+   }
+  }
+  java Memory
+  -----------
+  1 .Heap   ---> 1.Young Generation (Edenspace,-> survivour1,survivour2)
+                                              |
+ 						        2 .tenured or old generation
+  3 .pre area 
+  -------------------------------------------------
+  java 8 new features
+  Lamdha Expresions:
+ 
+  
+  method reference
+  static meth in interface
+  option class
+  collector class
+  forEach()
+  paralle array sorting
+  nashorn java script Engine
+  -------------------------------------------------
+  time: 1.Localization
+        2.Internationalization ---- pkg i18n;
+		

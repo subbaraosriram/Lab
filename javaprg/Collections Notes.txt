@@ -1,0 +1,53 @@
+collections -- class            .sort,binarysearch,shuffle,etc,.;
+collection  -- interface
+--------------------------------------------------------------
+collactios is a api a set of librariy
+int[] a = new int[n];
+Employee e[] = new Employee[n];
+---------------------------------------------------------------
+java 1 
+vector v1 = new Vector();
+v1.add();
+Hashtable ht = new Hashtable();
+ht.put(12,"key 1");
+---------------------------------------------------------------
+java 1.2
+collection api;
+iterable
+---------------------------------------------------------------
+Collection
+   |
+   |
+   List(duplicates)                                                                     Map(Key,value Pair)
+    |                |                  |                                      |                    |                 |
+	 ________________________________________________                        HashMap             LinkedMap          TreeMap
+    |ArrayList      Vector              LinkedList   |
+  capacity - 50% -   double              DS
+  noSynchonized    Synchonized         for more insert
+  multithred       single(slow)        and del in middle
+  for more serch     |                      
+  -----------------stack------------------------------
+  
+  set(no deplicates)
+  _____________________________________________________
+       |                      |                |
+    Hashsset            LinkedHashset      Sortedset  
+       |                      |                |
+	   |                      |              TreeSet
+  ramdom sort           insert order       sorted order
+---------------------------------------------------------------  
+  Queue(FIFO)
+      |
+  ________________________________________________
+     |                         |
+   Dqueue                 BlockingQueue
+     |                         |
+   Double end             enables with producer
+                          and consumer problem
+========================================================================
+Iterable
+    |
+________________________________________________________________________
+    |                               |                          |
+iterator                      listiterator                enumeration
+uni                             bidirec 						  
