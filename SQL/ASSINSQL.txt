@@ -1,0 +1,29 @@
+1.1
+SET SERVEROUTPUT ON
+ DECLARE
+V_Sample1 NUMBER(2) := 5;
+
+V_Sample2 CONSTANT NUMBER(2) := 4 ;
+
+V_Sample3 NUMBER(2) NOT NULL  := 5;
+
+V_Sample4 NUMBER(2) := 50;
+
+V_Sample5 NUMBER(2) DEFAULT 25;
+begin
+V_SAMPLE1:=2;
+ DBMS_OUTPUT.PUT_LINE(V_Sample1);
+END;
+/
+---------------------------------
+3.1
+SET SERVEROUTPUT ON
+DECLARE
+ v_dob  DATE:= to_date('&v_dob', 'MM/DD/YYYY');
+ v_age   NUMBER(3, 1);
+BEGIN
+  v_age := TRUNC(MONTHS_BETWEEN(SYSDATE, v_dob))/12;  
+  DBMS_OUTPUT.PUT_LINE ('age is ' || v_age);
+END;
+/
+----------------------------------

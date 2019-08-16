@@ -1,0 +1,25 @@
+<div>
+  <table [attr.align]="center" >
+    <!-- <tr>
+      <th [attr.colspan]="colspanv" bgcolor="#ff9933">Student Detailes</th>
+      </tr> -->
+      <tr>
+      <th>Assignment ID</th>
+      <th>Topid</th>
+      <th>grade</th>
+      <th>StudentId</th>
+  </tr>
+   <!-- <ng-container *ngIf="selectedStudentCountRadioButton === 'All' || selectedStudentCountRadioButton === student.gender ">-->
+      <tr *ngFor='let assignment of assignments' >
+           <td>{{assignment.aid}}</td>
+           <td>{{assignment.topic}}</td>
+           <td>{{assignment.grade}}</td>
+           <td>{{assignment.student.id}}</td>
+            
+    </tr>
+   <!-- </ng-container> -->
+    <tr *ngIf="!assignments || assignments.length == 0">
+      <td  colspan="4">No Assignment Okay Be Queit</td>
+    </tr>
+    </table>
+  </div>

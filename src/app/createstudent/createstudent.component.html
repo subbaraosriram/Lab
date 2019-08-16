@@ -1,0 +1,11 @@
+<div class="card">
+<fieldset>
+   <legend>Add Student</legend>
+ <form (ngSubmit)="addStudent()" >
+   <input type="number" name="id" placeholder="id"[(ngModel)]="student.id"/><br>
+   <input type="text" name="name" placeholder="name" [(ngModel)]="student.name"/><br>
+   <input type="number" name="age" placeholder="Age" [(ngModel)]="student.age"/><br>
+   <input type="submit"/>
+ </form>
+</fieldset>
+</div>

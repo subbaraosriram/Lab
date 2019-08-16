@@ -1,0 +1,103 @@
+||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+==================================================================================================
+=servlet(interface) : -inti()   --->one time it will called                                      =  
+=                     -destory()--->called at the end to destory servlet                         =
+=					  -service()--->called no:of times                                           =
+=					   service(servletRequest obj,servletResponse obj)throws ServletException    =
+=					   service method has child methods                                          =
+=					  -getServletInfo()                                                          =
+=servletConfig:                                                                                  =
+=                     -init(),init(servletConfig conf),destory					                 =
+=HTTP medhods are get,put,post,delete,option,trace;		                                         =
+=HTTPServlets are doget,",",",",",";                                                             =
+==================================================================================================	
+SESSION MANAGEMENT:                                                                              =
+-------------------                                                                              =
+4 types :|--------------->url rewriting  ===> bulky code                                         =
+         |--------------->input type hidden fields  ===>  not using                              = 
+		 |--------------->cookieclass(virus is drawback)                                         =
+		                  (Cookie ck = new Cookie("","");                                        =
+						  response.addCookie(ck);                                                =
+						  ck.setMaxAge(0);                                                       =
+		 |--------------->HTTP Session-> interface ;                                             =
+                          HTTPSession SESSION = request.getSession;                              =
+                          session.SetAttribute("name",name);                                     =
+						  session.getAttribute("name");                                          =
+						  session.removeAttribute("name");                                       =
+						  session.invalidate();                                                  =
+						  session.maxInActiveTime();                                             =
+==================================================================================================
+Jsp=
+tags
+----
+<%         --->scriplet TAG
+<%!        --->
+<%=        --->Assignemt  ex{=date}
+<%--       ---> comments
+<%@page    ---> page direction
+<%@include ---> include programs static pages
+<%@taglib  ---> include uri
+----------------------------------------------------------------------------------------------------
+implicite Objects
+-----------------
+o=>out
+o=>request
+o=>response
+o=>config
+o=>applocation
+o=>pageContext
+o=>page(no use)
+o=>exception
+-----------------------------------------------------------------------------------------------------
+action
+---------
+|->- <jsp:include
+|->- <jsp:forward
+|->- <jsp:param
+|->- <jsp:useBeans
+|->- <jsp:getProperty
+|->- <jsp:setProperty
+---------------------------------------------------------------------------------------------------- 					  
+${variable}
+inside TAGLIB
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+1.CORE
+                      |---------> <c:set var="variablename" value="value to variable" scope="SESSION|APPLICATION"></>
+	                  |---------> <c:out var="${variable}"/>
+	                  |---------> <c:remove var="variable"/>
+	                  |---------> <c:if test="${condition}"></>
+	                  |---------> <c:choose ><c:when="${condition}"</></>
+	                  |---------> <c:forEach var="i" start="1" ends="6" step="1">
+	                  |---------> <c:FOrtoken
+ 	   |---------> <c:import
+	   |---------> <c:url
+	   |---------> <c:redirect
+	   |---------> <c:catch
+2.FORMATTING
+                     |----><fmt:FormateNumber type="num/curency/percentage" pattern="">            setLocaly-currency
+					 |----><fmt:FormateDate   type="date/time/both" date|time style="long|medium|short" pattern="" >
+3.FUNCTION
+                     |----><c:if test="${f:contains(name,"test")}"
+4.SQL
+                     |----><s:setDataSource driver=" " url=" " user=" " password=" " (database variable)var ="bd">
+                     |----><s:query var="rs" datasource="${db}">
+                                |
+                               select * from {the result stroed in rs variable for printing}
+							   <c:foreach items="rs.rows">${rs}
+					 |----><s:tracation><s:update	datasource="${db}"></></> for more (update) querys we use transaction	   
+                     |----><s:param> it is for ?</>               							   
+					  
+5.XML ->under webinf file we have to create file.tld file taglibrary insise this ->
+                                    <tag>
+									     <name>name</>
+										 <class></>
+										 <attr true|flasee></>
+									</>
+                                    <%@taglib uri="webinf/file.tld" prefix="s"%>
+                     |----><s:name></>		
+        TagSupport
+                  |--->SKIP_BODY
+                  |--->iNCLUDE_BODY
+                  |--->EVAL_BODY			
+                  |--->JSP.writer				  
+syntax-><%@taglib URI="LINK" PREfix="nick name of link"%>

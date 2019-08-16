@@ -1,0 +1,21 @@
+table
+    {
+     border: 3px double darkkhaki;
+     width: 60%
+     
+    }
+th,td{
+    border: 3px double cornflowerblue;
+    
+} 
+tr:first-child{
+    background-color: blue;
+}
+tr:nth-child(even)
+{
+    background-color:darkkhaki;
+}
+tr:nth-child(odd)
+{
+    background-color:mediumslateblue;
+}

@@ -1,0 +1,28 @@
+<table [attr.align]="center" >
+<tr>
+  <th [attr.colspan]="colspanv">Student Detailes</th>
+</tr>
+<tr>
+        <th>Student ID</th>
+        <td>{{stuid}}</td>
+</tr>
+ <tr>
+  <th>Name</th>
+  <td>{{stuname}}</td>
+</tr>
+<tr *ngIf = "showDetails">
+  <th>Age</th>
+  <td>{{age}}</td>
+</tr>
+<tr *ngIf = "showDetails">
+  <th>Marks</th>
+  <td>{{marks}}</td>
+</tr>
+<tr *ngIf = "showDetails" >
+  <th>gender</th>
+  <td>{{gen}}</td>
+</tr>
+</table>
+<button (click)="toggleDetails()">
+  {{showDetails? 'Hide':'Show'}}Detailes
+</button>

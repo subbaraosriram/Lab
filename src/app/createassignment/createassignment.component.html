@@ -1,0 +1,16 @@
+<div class="card">
+  <fieldset>
+     <legend>Add assignment</legend>
+   <form (ngSubmit)="addAssignment()" >
+     <input type="number" name="id" placeholder="id"   [(ngModel)]="assignment.aid"/><br>
+     <input type="text" name="topic" placeholder="topic" [(ngModel)]="assignment.topic"/><br>
+     <input type="number" name="grade" placeholder="grade" [(ngModel)]="assignment.grade"/><br>
+    <select id='student' #student="ngModel" name="student" 
+     [(ngModel)]="id" >
+       <option *ngFor='let student of students' [value]="student.id">{{student.name}}</option>
+     </select>
+     <br/>
+     <input type="submit"/>
+   </form>
+  </fieldset>
+  </div>

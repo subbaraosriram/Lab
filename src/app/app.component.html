@@ -1,0 +1,24 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>
+    Welcome to {{title}}!
+  </h1>
+  Name:<input [(ngModel)] ='name'/>  
+  <br>
+  <app-studentlist></app-studentlist>
+</div> -->
+<h1>
+    Welcome to {{title}}!
+  </h1>
+ <div style="padding: 5px">
+   <ul class="nav nav-tabs">
+      <li routerLinkActive="active"><a href="students">students</a> </li>
+      <li routerLinkActive="active"><a href="trainers">trainers</a> </li>
+      <li routerLinkActive="active"><a href="student/add">student/add</a> </li>
+      <li routerLinkActive="active"><a href="trainer/add">trainer/add</a> </li>
+      <li routerLinkActive="active"><a href="assignments">assignments</a> </li>
+      <li routerLinkActive="active"><a href="assignment/add">assignment/add</a> </li>
+   </ul>
+   <router-outlet></router-outlet>
+</div>
+ 

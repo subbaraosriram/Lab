@@ -1,0 +1,32 @@
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+public class CallProdecure {
+
+	public static void main(String[] args)
+	{
+		 try 
+		 {
+			Connection con = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","system");
+			String sql ="CREATE OR REPLACE PROCEDURE INSER_JOB (ID IN NUMBER , NAME IN VARCHAR2 ) AS BEGIN INSERT INTO JOB VALUES(ID,NAME);END;";
+		    PreparedStatement pst = con.prepareStatement(sql);
+		    pst.executeQuery();
+		     
+	        CallableStatement cal = con.prepareCall("{call inser_job(?,?)}");
+    	    cal.setString(1,"123");
+    	    cal.setString(2,"sdfg");
+    	    cal.executeUpdate();
+    	    
+		    
+		 } 
+		 catch (SQLException e)
+		 {
+						e.printStackTrace();
+		}	 
+	}
+
+}
+----------------------------------------------------------------------
